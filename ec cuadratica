@@ -1,0 +1,48 @@
+/******************************************************************************
+
+Isabella
+
+*******************************************************************************/
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    
+    float a, b, c, dis, x1, x2;
+    cout<<"Ecuacion cuadratica a^2+bx+c=0"<<endl;
+   //cout<<"Ecuacion cuadratica: x= (-b (+-) sqrt(b-4*a*c))/2*a"<<endl;
+   cout<<"Introducir a: ";
+   cin>>a;
+   cout<<"Introducir b: ";
+   cin>>b;
+   cout<<"Introducir c: ";
+   cin>>c;
+   dis= pow(b,2) - 4 *a*c;
+   
+   if (dis>0)
+   {
+       x1= (-b + (sqrt(dis) ) ) / (2*a);
+       x2= (-b - (sqrt(dis) ) ) / (2*a);
+       
+       cout<< "Hay dos soluciones: "<<endl;
+       cout<<"x1 = "<< x1 << endl;
+       cout<<"x2 = "<< x2 << endl;
+   }
+   
+    if (dis==0)
+   {
+       x1= (-b ) / (2*a);
+       
+       cout<< "Hay una solucion: "<<endl;
+       cout<<"x = "<< x1 << endl;
+   }
+   
+   if (dis<0)
+   {
+       cout<< "Las soluciones son imaginarias. "<<endl;
+   }
+
+    return 0;
+}
