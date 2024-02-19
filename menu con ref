@@ -1,0 +1,93 @@
+#include <iostream>
+using namespace std;
+void menu();
+void pot(int b, int ex, int &res);
+int fact(int fact);
+float serie (float x, int num);
+
+int main()
+{
+   // menu;
+   int op, base, expo, fac, x, num;
+    do
+    {
+        cout<<"MENU"<<endl;
+        cout<<"1.- Potencia sin POW"<<endl;
+        cout<<"2.- Factorial"<<endl;
+        cout<<"3.- Serie"<<endl;
+        cout<<"0.- Salir"<<endl;
+        cout<<"Que opcion desea?"<<endl;
+        cin>>op;
+         switch(op)
+        { 
+            case 0:
+                cout<<"Saliendo... Gracias por usar nuestro porgrama."<<endl;
+                break;
+                
+            case 1:
+                cout<<"Introducir base: ";
+                cin>> base;
+                cout<<"Introducir exponente:";
+                cin>>expo;
+                cout<<"La potencia es: "<<pot (base, expo)<<endl;
+                break;
+                
+            case 2:
+                cout<<"Introducir numero a sacar factorial: ";
+                cin>>fac;
+                cout<<"El factorial de "<<fac<<" es: "<<fact(fac)<<endl;;
+                break;
+                
+            case 3:
+                cout<<"Introducir x: ";
+                cin>>x;
+                cout<<"Introducir numero de veces a repetirse: ";
+                cin>>num;
+                cout<<"El resultado de la serie es: "<< serie(x, num)<<endl;
+                break;
+            
+            default:
+                cout<<"Error. Introducir opcion valida."<<endl;
+                break;
+        }
+    
+    } while (op!=0);
+    return 0;
+}
+
+
+
+
+void pot(int b, int ex)
+{
+    int res=1;
+  for (int i=1; i<=ex; i++)
+  {
+      res=res*b;
+  }
+  
+}
+
+int fact(int fact)
+{
+    int res=1;
+    for(int i=1; i<=fact;i++)
+    {
+        res*=i;
+    }
+    
+    return res;
+}
+
+float serie (float x, int num)
+{
+    float res=0;
+    for(int i=2; i<=num; i=i+2)
+    {
+        res=res+pot(x,i)/fact(i);
+    }
+    res=res + 3 + x;
+    
+    return res;
+}
+
